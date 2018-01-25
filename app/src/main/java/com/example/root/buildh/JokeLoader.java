@@ -34,7 +34,7 @@ public class JokeLoader extends AsyncTask <Void,Void,String>{
 
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(),null)
-                    .setRootUrl("http://192.168.1.6:8080/_ah/api/")
+                    .setRootUrl("http://composed-mason-192920.appspot.com/_ah/api/")
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
                         public void initialize(AbstractGoogleClientRequest<?> request) throws IOException {
