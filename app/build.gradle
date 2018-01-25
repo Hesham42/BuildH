@@ -22,12 +22,12 @@ android {
     }
     productFlavors {
         free {
-            applicationId "com.udacity.gradle.builditbigger.free"
+            applicationId "com.example.root.buildh.free"
             versionName "1.0­free"
         }
 
         paid {
-            applicationId "com.udacity.gradle.builditbigger.paid"
+            applicationId "com.example.root.buildh.paid"
             versionName "1.0­paid"
         }
     }
@@ -52,6 +52,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.code.findbugs:jsr305:2.0.1'
-    compile 'com.google.android.gms:play-services-ads:11.0.4'
+    freeCompile 'com.google.android.gms:play-services-ads:11.0.4'
     testCompile 'junit:junit:4.12'
 }
