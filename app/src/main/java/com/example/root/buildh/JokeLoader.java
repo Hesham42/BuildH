@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.jokefactroy.DisplayJoke;
 import com.example.root.myapplication.backend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -53,9 +54,9 @@ public class JokeLoader extends AsyncTask <Void,Void,String>{
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-//        Intent intent = new Intent(context, .class);
-//        intent.putExtra("joke",s);
-//        context.startActivity(intent);
-//        progressBar.setVisibility(View.INVISIBLE);
+        Intent intent = new Intent(context, DisplayJoke.class);
+        intent.putExtra("joke",s);
+        context.startActivity(intent);
+        progressBar.setVisibility(View.INVISIBLE);
     }
 }
