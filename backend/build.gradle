@@ -30,6 +30,7 @@ dependencies {
     compile 'com.google.api-client:google-api-client-android:+'
     compile 'com.google.http-client:google-http-client:+'
     compile 'com.google.http-client:google-http-client-android:+'
+    compile project(path: ':javajoker')
 }
 
 appengine {
