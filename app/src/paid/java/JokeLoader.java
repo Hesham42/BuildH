@@ -19,7 +19,6 @@ import java.io.IOException;
 /**
  * Created by root on 1/25/18.
  */
-
 public class JokeLoader extends AsyncTask <Void,Void,String>{
     private static MyApi myApi = null;
     private Context context;
@@ -35,7 +34,7 @@ public class JokeLoader extends AsyncTask <Void,Void,String>{
 
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(),null)
-                    .setRootUrl("http://composed-mason-192920.appspot.com/_ah/api/")
+                    .setRootUrl("http://buildh-193414.appspot.com/_ah/api/")
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
                         public void initialize(AbstractGoogleClientRequest<?> request) throws IOException {
