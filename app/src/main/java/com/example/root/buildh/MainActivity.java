@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void tellJoke(View view) {
         progressBar.setVisibility(View.VISIBLE);
-        JokeLoader jokeLoader  = new JokeLoader(this,progressBar);
+        com.example.root.buildh.JokeLoader jokeLoader  = new com.example.root.buildh.JokeLoader(this,progressBar);
         jokeLoader.execute();
         Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
     }

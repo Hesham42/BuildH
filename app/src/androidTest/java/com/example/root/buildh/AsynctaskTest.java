@@ -1,5 +1,6 @@
 package com.example.root.buildh;
 
+import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.AndroidTestCase;
 import android.util.Log;
@@ -18,7 +19,8 @@ public class AsynctaskTest extends AndroidTestCase {
     public void doInBackground() throws Exception {
         try{
             MainActivity mainActivity = new MainActivity();
-            com.example.root.buildh.JokeLoader jokeLoader = new com.example.root.buildh.JokeLoader(mainActivity,null);
+            com.example.root.buildh.JokeLoader jokeLoader =
+                    new com.example.root.buildh.JokeLoader(mainActivity,null);
             jokeLoader.execute();
             String result = jokeLoader.get(30, TimeUnit.SECONDS);
 
