@@ -1,11 +1,6 @@
-package com.example.root.buildh;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.view.View;
-import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import com.example.jokefactroy.DisplayJoke;
 import com.example.root.myapplication.backend.myApi.MyApi;
@@ -23,10 +18,10 @@ import java.io.IOException;
 public class JokeLoader extends AsyncTask <Void,Void,String>{
     private static MyApi myApi = null;
     private Context context;
-    ProgressBar progressBar;
-    public JokeLoader (Context context,ProgressBar progress){
+//    ProgressBar progressBar;
+    public JokeLoader(Context context){
         this.context = context;
-        progressBar = progress;
+//        progressBar = progress;
     }
     @Override
     protected String doInBackground(Void... params) {
@@ -56,7 +51,8 @@ public class JokeLoader extends AsyncTask <Void,Void,String>{
         super.onPostExecute(s);
         Intent intent = new Intent(context, DisplayJoke.class);
         intent.putExtra("joke",s);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
-        progressBar.setVisibility(View.INVISIBLE);
+//        progressBar.setVisibility(View.INVISIBLE);
     }
 }

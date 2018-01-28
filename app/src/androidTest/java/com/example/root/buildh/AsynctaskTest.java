@@ -1,10 +1,13 @@
 package com.example.root.buildh;
 
+import android.content.Context;
 import android.support.test.InstrumentationRegistry;
+import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.AndroidTestCase;
 import android.util.Log;
 
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -15,19 +18,24 @@ import java.util.concurrent.TimeUnit;
  */
 @RunWith(AndroidJUnit4.class)
 public class AsynctaskTest extends AndroidTestCase {
+    @Rule
+    public ActivityTestRule<MainActivity> mActivityRule =
+            new ActivityTestRule<>(MainActivity.class);
+    Context context;
+
     @Test
     public void doInBackground() throws Exception {
         try{
-            MainActivity mainActivity = new MainActivity();
-            com.example.root.buildh.JokeLoader jokeLoader =
-                    new com.example.root.buildh.JokeLoader(mainActivity,null);
+           context= mActivityRule.getActivity().getApplicationContext();
+            JokeLoader jokeLoader =
+                    new JokeLoader(context);
             jokeLoader.execute();
             String result = jokeLoader.get(30, TimeUnit.SECONDS);
 
             assertNotNull(result);
             assertTrue(result.length() > 0);
         } catch (Exception e){
-            Log.e("AsyncTaskTested", "testDoInBackground: Timed out");
+            fail("Operation timed out");
         }
     }
 }
